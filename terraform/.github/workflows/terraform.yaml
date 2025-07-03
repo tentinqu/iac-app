@@ -1,5 +1,5 @@
 name: "Vprofile IAC"
-on: 
+on:
   push:
     branches:
       - main
@@ -42,7 +42,7 @@ jobs:
           
       - name: Terraform Init
         id: init
-        run: terraform init -backend-config="bucket=$BUCKET_TF_STATE"
+        run: terraform init -backend-config="bucket=$TF_STATE_BUCKET"
 
       - name: Terraform fmt
         id: fmt
@@ -54,7 +54,7 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -no-color -input=false -out=planfile
+        run: terraform plan -no-color -input=false -out=tfplan
         continue-on-error: true
 
       - name: Terraform plan status
