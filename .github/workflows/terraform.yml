@@ -22,7 +22,7 @@ env:
   # S3 bucket for Terraform state
   TF_STATE_BUCKET: ${{ secrets.BUCKET_TF_STATE }}
   # Region for AWS resources
-  AWS_REGION: us-east-2
+  AWS_REGION: us-east-1
   EKS_CLUSTER_NAME: gitops-eks
 
 jobs:
